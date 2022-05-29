@@ -2,7 +2,18 @@ import kotlinx.browser.*
 import org.w3c.dom.*
 
 var chances = 5
-val palavraSecreta: String = "poder"
+fun palavras() : String {
+
+    val palavras : Array<String> = arrayOf("mouse", "sagaz", "mexer", "termo","senso","nobre","algoz","afeto", "ponto",
+    "plena","sutil","vigor","fazer","audaz","sanar","assim","inato","cerne","ideia","fosse", "round", "abrir", "hiato",
+    "desde","poder","moral","torpe","muito","honra","justo","gozar", "anexo","etnia", "sobre", "sonho", "tange", "lapso", 
+    "expor", "haver", "amigo", "carma", "velho", "sonsa", "ideal", "claro", "doido", "horda", "inata", "capaz", "xeque")
+    val random = Random.nextInt(until = palavras.size)
+    return palavras[random]
+
+}
+
+val palavraSecreta = palavras()
 
 fun ehIgual(s: String): Boolean {
 	return s.equals(palavraSecreta)
